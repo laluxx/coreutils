@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-// TODO When there is only one argument
-// it should listen to stdin
+// TODO When there is only one argument // it should listen to std-in
+// TODO Unfinished
 
 int main(int argc, char *argv[]) {
     if (argc == 1) {

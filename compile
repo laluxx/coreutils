@@ -1,0 +1,10 @@
+#!/bin/bash
+for file in ./*.c; do
+    filename=$(basename -- "$file")
+    filename_no_ext="./${filename%.*}"
+    gcc "$file" -o "$filename_no_ext"
+    chmod +x "$filename_no_ext"
+done
+if [[ ! -z $1 ]]; then
+    ./"$1" "${@:2}"
+fi

@@ -5,6 +5,5 @@ int main() {
     while (true) {
         printf("y\n");
     }
-    
     return 0;
 }

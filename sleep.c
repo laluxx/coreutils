@@ -4,18 +4,20 @@
 #include <string.h>
 
 int main(int argc, char *argv[]) {
-
-    if (argc == 1) {
+    if (argc > 1 && strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0) {
+        printf("Sleep\nusage: sleep [TIME]\n [TIME] = seconds or milliseconds \"int or float\"\n");
         return 0;
-    }
-
-    if (strchr(argv[1], '.') != NULL) {
-        float time = atof(argv[1]);
-        usleep(time * 1000000);
     } else {
-        int time = atoi(argv[1]);
-        sleep(time);
+        if (argc <= 1) {
+            return 1;
+        }
+        if (strchr(argv[1], '.') != NULL) {
+            float time = atof(argv[1]);
+            usleep(time * 1000000);
+        } else {
+            int time = atoi(argv[1]);
+            sleep(time);
+        }
     }
-    
     return 0;
 }
